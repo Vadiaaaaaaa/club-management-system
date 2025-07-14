@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title><%= event.eventName %></title>
+  <link rel="stylesheet" href="/event-details.css" />
+
+  <head>
+
+  </head>
+
+  <body>
+
+  <div class="event-modal">
+    <div class="event-banner" style="background-image: url('<%= event.image %>')">
+      <div class="banner-overlay">
+        <h1><%= event.eventName %></h1>
+        <div class="club"><%= event.club %></div>
+        <div class="capacity-badge"><%= event.registered %>/<%= event.capacity %></div>
+      </div>
+    </div>
+    <div class="event-content">
+      <p><%= event.longDesc %></p>
+
+      <div class="event-meta">
+        <div class="meta-item"><i>📍</i> TT Terrace</div>
+        <div class="meta-item"><i>🕒</i> 9:30pm – 12:30am</div>
+        <div class="meta-item"><i>📅</i> <%= event.date %></div>
+      </div>
+    </div>
+
+    <div class="event-footer">
+      <span class="tag">Individual</span>
+      <form action="/events/<%= event.id %>/register" method="POST">
+        <button
+          class="register-btn"
+          type="submit"
+          <%= registeredEvents.includes(event.id) ? "disabled" : "" %>>
+          <%= registeredEvents.includes(event.id) ? "Registered" : "Register" %>
+        </button>
+      </form>
+    </div>
+  </div>
+
+</body>
+</html>

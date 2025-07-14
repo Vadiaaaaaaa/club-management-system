@@ -1,0 +1,106 @@
+body {
+  font-family: sans-serif;
+  background-color: #f5f6ef;
+  margin: 0;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  align-items: center;
+  background-color: white;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: black;
+  font-weight: 500;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.profile-icon img {
+  height: 32px;
+}
+
+.heading {
+  padding-left: 2rem;
+  font-size: 2rem;
+  margin-top: 1rem;
+}
+
+.clubs-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(45%, 1fr));
+  gap: 1.5rem;
+  padding: 2rem;
+}
+
+.club-card {
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  border-radius: 25px;
+  height: 160px;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-end;
+}
+
+.card-overlay {
+  background: rgba(0, 0, 0, 0.45);
+  width: 100%;
+  padding: 1rem;
+  color: white;
+  border-radius: 0 0 25px 25px;
+}
+
+.card-overlay h2 {
+  margin: 0;
+  font-size: 1.3rem;
+}
+
+.badge {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  background-color: white;
+  color: black;
+  padding: 4px 10px;
+  border-radius: 15px;
+  font-size: 0.75rem;
+  font-weight: bold;
+}
+
+.actions {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.know-more-btn, .join-btn {
+  padding: 6px 15px;
+  border-radius: 20px;
+  font-weight: 500;
+  border: 2px solid white;
+  background: transparent;
+  color: white;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.join-btn {
+  background-color: white;
+  color: black;
+  border: none;
+}

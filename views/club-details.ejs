@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title><%= club.name %></title>
+  <link rel="stylesheet" href="/club-details.css" />
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="logo">ClubHUB</div>
+    <ul class="nav-links">
+      <li><a href="/clubs">Clubs</a></li>
+      <li><a href="/upcoming-events">Upcoming Events</a></li>
+      <li><a href="/dashboard">Dashboard</a></li>
+    </ul>
+    <div class="profile-icon">
+      <img src="/images/profile-icon.png" alt="Profile" />
+    </div>
+  </nav>
+
+  <div class="club-details-banner" style="background-image: url('<%= club.image %>')">
+    <h1><%= club.name %></h1>
+  </div>
+
+  <div class="club-description">
+    <p><%= club.longDesc %></p>
+  </div>
+
+  <div class="club-meta">
+    <button class="info-btn">Team strength: <%= club.teamStrength %></button>
+    <button class="info-btn">The Board</button>
+    <ul>
+      <% club.board.forEach(member => { %>
+        <li><%= member %></li>
+      <% }); %>
+    </ul>
+
+    <button class="info-btn">Upcoming Events</button>
+    <ul>
+      <% club.upcomingEvents.forEach(ev => { %>
+        <li><%= ev %></li>
+      <% }); %>
+    </ul>
+
+    <button class="info-btn">Past Events</button>
+    <ul>
+      <% club.pastEvents.forEach(ev => { %>
+        <li><%= ev %></li>
+      <% }); %>
+    </ul>
+
+    <button class="info-btn">Announcements</button>
+    <ul>
+      <% club.announcements.forEach(note => { %>
+        <li><%= note %></li>
+      <% }); %>
+    </ul>
+  </div>
+
+  <div class="club-footer">
+    <form action="/clubs/<%= club.id %>/follow" method="POST">
+      <button class="follow-btn" type="submit">Follow</button>
+    </form>
+    <form action="/clubs/<%= club.id %>/apply" method="POST">
+      <button class="join-btn" type="submit">Join</button>
+    </form>
+  </div>
+
+  <div class="social-links">
+    <span>🔗 LinkedIn: <a href="https://linkedin.com/in/<%= club.linkedin %>" target="_blank">@<%= club.linkedin %></a></span>
+    <span>📸 Instagram: <a href="https://instagram.com/<%= club.instagram %>" target="_blank">@<%= club.instagram %></a></span>
+    <span>📧 Email: <a href="mailto:<%= club.email %>"><%= club.email %></a></span>
+  </div>
+
+</body>
+</html>
+

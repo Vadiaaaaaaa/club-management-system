@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="/browse.css">
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="logo">ClubHUB</div>
+    <ul class="nav-links">
+      <li><a href="/clubs">Clubs</a></li>
+      <li><a href="/events">Upcoming Events</a></li>
+      <li><a href="/dashboard">Dashboard</a></li>
+    </ul>
+    <div class="profile-icon">
+      <img src="/images/profile-icon.jpg" alt="Profile" />
+    </div>
+  </nav>
+
+  <h1 class="heading">Upcoming Events</h1>
+
+  <div class="main-container">
+    <div class="events-container">
+      <% events.forEach(event => { %>
+        <div class="event-card" style="background-image: url('<%= event.image %>')">
+          <div class="event-details">
+            <h2><%= event.eventName %></h2>
+            <p class="short-desc"><%= event.shortDesc %></p>
+            <div class="club-date">
+              <span><%= event.club %></span>
+              <span class="date-badge"><%= event.date %></span>
+              <a href="/events/<%= event.id %>">
+              <button class="register-btn">Know More</button>
+              </a>
+            </div>
+          </div>
+          <div class="event-actions">
+            <div class="registered-count"><%= event.registered %>/<%= event.capacity %></div>
+            <form action="/events/<%= event.id %>/register" method="POST">
+              <button
+                class="register-btn"
+                type="submit"
+                <% if (registeredEvents && registeredEvents.includes(event.id)) { %> disabled <% } %>>
+                <%= registeredEvents && registeredEvents.includes(event.id) ? "Registered" : "Register" %>
+              </button>
+            </form>
+          </div>
+        </div>
+      <% }); %>
+    </div>
+  </div>
+
+  <script>
+  </script>
+
+</body>
+</html>

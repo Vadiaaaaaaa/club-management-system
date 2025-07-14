@@ -1,0 +1,206 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f3f5ef;
+  color: #000;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 40px;
+  background-color: #fff;
+}
+
+.logo {
+  font-size: 1.8rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+
+.auth-buttons button {
+  margin-left: 10px;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+.login {
+  background-color: white;
+  color: #0c9980;
+  border: 1px solid #0c9980;
+}
+
+.signup {
+  background-color: #0c9980;
+  color: white;
+}
+
+.hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 60px 40px;
+}
+
+.hero-text h1 {
+  font-size: 7rem;
+  line-height: 1.2;
+  margin-bottom: 30px;
+}
+
+.hero-text span {
+  display: block;
+}
+
+.browse-btn {
+  display: inline-block;
+  text-decoration: none;
+  background-color: #ff7c63;
+  color: white;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 25px;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-top: 20px;
+  transition: all 0.3s ease;
+}
+
+a.browse-btn:hover {
+  background-color: #e76a54;
+}
+
+a.browse-btn:active {
+  transform: scale(0.96);
+  box-shadow: 0 3px 10px rgba(255, 124, 99, 0.3);
+}
+
+
+
+.hero-image img {
+  width: 700px;
+  border-radius: 25px;
+  object-fit: cover;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+}
+
+/* Base reset & styles remain same */
+
+.auth-buttons button {
+  margin-left: 10px;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+/* Login button */
+.login {
+  background-color: white;
+  color: #0c9980;
+  border: 1px solid #0c9980;
+}
+
+.login:hover {
+  background-color: #0c9980;
+  color: white;
+}
+
+.login:active {
+  transform: scale(0.95);
+  box-shadow: 0 2px 8px rgba(12, 153, 128, 0.3);
+}
+
+/* Sign Up button */
+.signup {
+  background-color: #0c9980;
+  color: white;
+}
+
+.signup:hover {
+  background-color: #0a7c67;
+}
+
+.signup:active {
+  transform: scale(0.95);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Browse Events button */
+.browse-btn {
+  background-color: #ff7c63;
+  color: white;
+  padding: 12px 24px;
+  border: none;
+  border-radius: 25px;
+  font-size: 1rem;
+  cursor: pointer;
+  margin-top: 20px;
+  transition: all 0.3s ease;
+}
+
+.browse-btn:hover {
+  background-color: #e76a54;
+}
+
+.browse-btn:active {
+  transform: scale(0.96);
+  box-shadow: 0 3px 10px rgba(255, 124, 99, 0.3);
+}
+
+/* Shared styles for both buttons */
+.login-btn,
+.signup-btn {
+  display: inline-block;
+  text-decoration: none;
+  margin-left: 10px;
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+/* Login Button Style */
+.login-btn {
+  background-color: white;
+  color: #0c9980;
+  border: 1px solid #0c9980;
+}
+
+.login-btn:hover {
+  background-color: #0c9980;
+  color: white;
+}
+
+.login-btn:active {
+  transform: scale(0.95);
+  box-shadow: 0 2px 8px rgba(12, 153, 128, 0.3);
+}
+
+/* Sign Up Button Style */
+.signup-btn {
+  background-color: #0c9980;
+  color: white;
+  border: none;
+}
+
+.signup-btn:hover {
+  background-color: #0a7c67;
+}
+
+.signup-btn:active {
+  transform: scale(0.95);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}

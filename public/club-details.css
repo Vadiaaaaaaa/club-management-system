@@ -1,0 +1,151 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #f4f5f1;
+  color: #222;
+}
+
+.navbar {
+  background-color: white;
+  padding: 1rem 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #ddd;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: #222;
+  font-weight: 500;
+}
+
+.profile-icon img {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+}
+
+.club-details-banner {
+  background-size: cover;
+  background-position: center;
+  height: 280px;
+  display: flex;
+  align-items: flex-end;
+  padding: 2rem;
+  color: white;
+  font-size: 2.5rem;
+  font-weight: bold;
+  border-bottom-left-radius: 30px;
+  border-bottom-right-radius: 30px;
+}
+
+.club-description {
+  background: white;
+  margin: 2rem auto;
+  width: 90%;
+  max-width: 800px;
+  padding: 1.5rem;
+  border-radius: 20px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+  font-size: 1.05rem;
+  line-height: 1.6;
+  font-weight: 500;
+  color: #444;
+}
+
+.club-meta {
+  background: white;
+  margin: 1rem auto;
+  width: 90%;
+  max-width: 800px;
+  padding: 1.5rem;
+  border-radius: 20px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+}
+
+.club-meta .info-btn {
+  background-color: #31b1ac;
+  color: white;
+  border: none;
+  padding: 0.7rem 1.2rem;
+  margin-top: 1rem;
+  font-size: 1rem;
+  font-weight: bold;
+  border-radius: 30px;
+  cursor: default;
+  display: inline-block;
+  margin-bottom: 0.5rem;
+}
+
+.club-meta ul {
+  padding-left: 1.5rem;
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.club-meta li {
+  margin-bottom: 0.4rem;
+  font-weight: 500;
+  color: #555;
+}
+
+.club-footer {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  margin: 2rem 0;
+}
+
+.follow-btn, .join-btn {
+  background: white;
+  color: #222;
+  padding: 0.6rem 1.5rem;
+  border: 2px solid #222;
+  border-radius: 25px;
+  font-size: 1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.follow-btn:hover, .join-btn:hover {
+  background: #222;
+  color: white;
+}
+
+.social-links {
+  width: 90%;
+  max-width: 800px;
+  margin: 1rem auto 3rem auto;
+  background: white;
+  padding: 1rem 1.5rem;
+  border-radius: 20px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+  font-size: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.social-links span a {
+  color: #0073b1; /* LinkedIn blue as base */
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.social-links span {
+  color: #333;
+}

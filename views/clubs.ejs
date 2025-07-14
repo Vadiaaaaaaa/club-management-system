@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Join a Club</title>
+  <link rel="stylesheet" href="/clubs.css" />
+</head>
+<body>
+
+  <nav class="navbar">
+    <div class="logo">ClubHUB</div>
+    <ul class="nav-links">
+      <li><a href="/clubs">Clubs</a></li>
+      <li><a href="/upcoming-events">Upcoming Events</a></li>
+      <li><a href="/dashboard">Dashboard</a></li>
+    </ul>
+    <div class="profile-icon">
+      <img src="/images/profile-icon.png" alt="Profile" />
+    </div>
+  </nav>
+
+  <h1 class="heading">Join a club!</h1>
+
+  <div class="clubs-container">
+    <% clubs.forEach(club => { %>
+      <div class="club-card" style="background-image: url('<%= club.image %>')">
+        <div class="card-overlay">
+          <h2><%= club.name %></h2>
+          <div class="badge">Recruiting</div>
+          <div class="actions">
+            <a href="/clubs/<%= club.id %>" class="know-more-btn">Know More</a>
+            <form action="/clubs/<%= club.id %>/apply" method="POST">
+              <button class="join-btn" type="submit">Join</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    <% }); %>
+  </div>
+
+</body>
+</html>
