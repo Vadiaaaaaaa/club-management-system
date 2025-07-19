@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Pick your Interests</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      background-color: #f0f0eb;
+    }
+    .container {
+      width: 90%;
+      max-width: 900px;
+      margin: 40px auto;
+      background: white;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+    }
+    h2 {
+      color: #ff4d40;
+    }
+    .category {
+      margin-bottom: 20px;
+    }
+    .category h3 {
+      font-size: 1.2em;
+      margin-bottom: 10px;
+    }
+    .checkbox-group {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    label {
+      display: flex;
+      align-items: center;
+      background: #f9f9f9;
+      padding: 6px 12px;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    input[type="checkbox"] {
+      margin-right: 8px;
+    }
+    .submit-btn {
+      background: #ff695e;
+      color: white;
+      padding: 12px 25px;
+      font-size: 16px;
+      border: none;
+      border-radius: 20px;
+      cursor: pointer;
+      margin-top: 30px;
+    }
+    .submit-btn:hover {
+      background: #ff4d40;
+    }
+  </style>
+</head>
+<body>
+  <form action="/interests" method="POST" class="container">
+    <h2>Pick your interests</h2>
+
+    <div class="category">
+      <h3>Arts & Culture</h3>
+      <div class="checkbox-group">
+        <label><input type="checkbox" name="interests" value="Music">Music</label>
+        <label><input type="checkbox" name="interests" value="Dance">Dance</label>
+        <label><input type="checkbox" name="interests" value="Drama & Theatre">Drama & Theatre</label>
+        <label><input type="checkbox" name="interests" value="Photography">Photography</label>
+        <label><input type="checkbox" name="interests" value="Literary Arts">Literary Arts</label>
+      </div>
+    </div>
+
+    <div class="category">
+      <h3>Entrepreneurship</h3>
+      <div class="checkbox-group">
+        <label><input type="checkbox" name="interests" value="Startups">Startups</label>
+        <label><input type="checkbox" name="interests" value="Finance">Finance</label>
+        <label><input type="checkbox" name="interests" value="Marketing">Marketing</label>
+        <label><input type="checkbox" name="interests" value="Public Speaking">Public Speaking</label>
+      </div>
+    </div>
+
+    <div class="category">
+      <h3>Tech & Innovation</h3>
+      <div class="checkbox-group">
+        <label><input type="checkbox" name="interests" value="Coding">Coding</label>
+        <label><input type="checkbox" name="interests" value="AI">AI</label>
+        <label><input type="checkbox" name="interests" value="Web Development">Web Development</label>
+        <label><input type="checkbox" name="interests" value="Cybersecurity">Cybersecurity</label>
+        <label><input type="checkbox" name="interests" value="Robotics">Robotics</label>
+      </div>
+    </div>
+
+    <div class="category">
+      <h3>Fun & Lifestyle</h3>
+      <div class="checkbox-group">
+        <label><input type="checkbox" name="interests" value="Quizzing">Quizzing</label>
+        <label><input type="checkbox" name="interests" value="Gaming">Gaming</label>
+        <label><input type="checkbox" name="interests" value="Board Games">Board Games</label>
+        <label><input type="checkbox" name="interests" value="Fitness">Fitness</label>
+        <label><input type="checkbox" name="interests" value="Cooking">Cooking</label>
+      </div>
+    </div>
+
+    <button type="submit" class="submit-btn">Done</button>
+  </form>
+</body>
+</html>

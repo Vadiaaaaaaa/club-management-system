@@ -32,19 +32,19 @@
             <div class="club-date">
               <span><%= event.club %></span>
               <span class="date-badge"><%= event.date %></span>
-              <a href="/events/<%= event.id %>">
+              <a href="/events/<%= event._id %>">
               <button class="register-btn">Know More</button>
               </a>
             </div>
           </div>
           <div class="event-actions">
             <div class="registered-count"><%= event.registered %>/<%= event.capacity %></div>
-            <form action="/events/<%= event.id %>/register" method="POST">
+            <form action="/events/<%= event._id %>/register" method="POST">
               <button
                 class="register-btn"
                 type="submit"
-                <% if (registeredEvents && registeredEvents.includes(event.id)) { %> disabled <% } %>>
-                <%= registeredEvents && registeredEvents.includes(event.id) ? "Registered" : "Register" %>
+                <% if (registeredEvents && registeredEvents.includes(event._id)) { %> disabled <% } %>>
+                <%= registeredEvents && registeredEvents.includes(event._id) ? "Registered" : "Register" %>
               </button>
             </form>
           </div>

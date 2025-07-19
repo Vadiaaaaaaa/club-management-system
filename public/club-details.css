@@ -1,151 +1,206 @@
 body {
-  margin: 0;
-  padding: 0;
-  font-family: 'Segoe UI', sans-serif;
-  background-color: #f4f5f1;
-  color: #222;
-}
+      font-family: 'Montserrat', sans-serif;
+      margin: 0;
+      background-color: #f3f5ef;
+    }
 
 .navbar {
-  background-color: white;
-  padding: 1rem 2rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 1px solid #ddd;
+  padding: 20px 40px;
+  background: white;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
 }
 
 .logo {
-  font-size: 1.5rem;
+  font-size: 24px;
   font-weight: bold;
+  color: #000;
 }
 
 .nav-links {
   list-style: none;
   display: flex;
-  gap: 2rem;
+  gap: 30px;
 }
 
 .nav-links li a {
   text-decoration: none;
-  color: #222;
+  color: black;
   font-weight: 500;
+  font-size: 16px;
 }
 
-.profile-icon img {
-  width: 32px;
-  height: 32px;
-  border-radius: 50%;
-}
-
-.club-details-banner {
-  background-size: cover;
-  background-position: center;
-  height: 280px;
-  display: flex;
-  align-items: flex-end;
-  padding: 2rem;
-  color: white;
-  font-size: 2.5rem;
-  font-weight: bold;
-  border-bottom-left-radius: 30px;
-  border-bottom-right-radius: 30px;
-}
-
-.club-description {
-  background: white;
-  margin: 2rem auto;
-  width: 90%;
-  max-width: 800px;
-  padding: 1.5rem;
-  border-radius: 20px;
-  box-shadow: 0 5px 20px rgba(0,0,0,0.05);
-  font-size: 1.05rem;
-  line-height: 1.6;
-  font-weight: 500;
-  color: #444;
-}
-
-.club-meta {
-  background: white;
-  margin: 1rem auto;
-  width: 90%;
-  max-width: 800px;
-  padding: 1.5rem;
-  border-radius: 20px;
-  box-shadow: 0 5px 20px rgba(0,0,0,0.05);
-}
-
-.club-meta .info-btn {
-  background-color: #31b1ac;
-  color: white;
-  border: none;
-  padding: 0.7rem 1.2rem;
-  margin-top: 1rem;
-  font-size: 1rem;
-  font-weight: bold;
-  border-radius: 30px;
-  cursor: default;
-  display: inline-block;
-  margin-bottom: 0.5rem;
-}
-
-.club-meta ul {
-  padding-left: 1.5rem;
-  margin-top: 0.5rem;
-  margin-bottom: 1rem;
-}
-
-.club-meta li {
-  margin-bottom: 0.4rem;
-  font-weight: 500;
+.nav-links li a:hover {
   color: #555;
 }
 
-.club-footer {
+.profile-icon img {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+}
+
+   .club-card {
+  width: 90%;
+  max-width: 1000px;
+  margin: 30px auto;
+  background-color: white;
+  border-radius: 25px;
+  overflow: hidden;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+}
+
+.club-bg {
+  background-size: cover;
+  background-position: center;
+  height: 500px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.club-overlay {
+  background-color: rgba(0, 0, 0, 0.55); /* semi-transparent dark overlay */
+  color: white;
+  padding: 40px;
+  text-align: center;
+  border-radius: 20px;
+  max-width: 90%;
+}
+
+.club-name {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 20px;
+}
+
+.club-desc {
+  font-size: 1rem;
+  line-height: 1.6;
+  margin-bottom: 20px;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.club-badges .badge {
+  display: inline-block;
+  background-color: #48b7c5;
+  color: white;
+  padding: 10px 18px;
+  border-radius: 999px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+
+.club-tags {
   display: flex;
   justify-content: center;
-  gap: 1.5rem;
-  margin: 2rem 0;
+  gap: 12px;
+  flex-wrap: wrap;
 }
 
-.follow-btn, .join-btn {
-  background: white;
-  color: #222;
-  padding: 0.6rem 1.5rem;
-  border: 2px solid #222;
-  border-radius: 25px;
-  font-size: 1rem;
-  font-weight: bold;
+.tag {
+  background-color: rgba(255, 255, 255, 0.2);
+  padding: 6px 12px;
+  border-radius: 999px;
+  font-size: 0.9rem;
+  border: 1px solid white;
+}
+
+.club-section-tags {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 20px;
+  
+}
+
+.section-tag {
+  background-color: #48b7c5;
+  color: white;
+  padding: 10px 18px;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 0.9rem;
   cursor: pointer;
-  transition: all 0.2s ease;
+  transition: background-color 0.3s;
+  text-decoration: none;
 }
 
-.follow-btn:hover, .join-btn:hover {
-  background: #222;
+.section-tag:hover {
+  background-color: #3ba9b4;
+}
+
+.join-button-container {
+  margin-top: 20px;
+}
+
+.join-btn {
+  background-color: #ffffff;
+  color: #48b7c5;
+  font-weight: 700;
+  padding: 10px 24px;
+  border-radius: 999px;
+  border: 2px solid #48b7c5;
+  text-decoration: none;
+  transition: all 0.3s;
+}
+
+.join-btn:hover {
+  background-color: #48b7c5;
   color: white;
 }
 
-.social-links {
+
+
+.club-card {
   width: 90%;
-  max-width: 800px;
-  margin: 1rem auto 3rem auto;
-  background: white;
-  padding: 1rem 1.5rem;
-  border-radius: 20px;
-  box-shadow: 0 5px 20px rgba(0,0,0,0.05);
-  font-size: 1rem;
+  max-width: 1000px;
+  margin: 40px auto;
+  background-color: white; /* The white card background */
+  border-radius: 30px;
+  padding: 20px; /* Space around the image */
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
+}
+
+.club-bg {
+  background-size: cover;
+  background-position: center;
+  border-radius: 25px;
+  overflow: hidden;
+  height: 600px;
+  position: relative;
   display: flex;
-  flex-direction: column;
-  gap: 0.6rem;
+  align-items: center;
+  justify-content: center;
 }
 
-.social-links span a {
-  color: #0073b1; /* LinkedIn blue as base */
-  text-decoration: none;
-  font-weight: bold;
+.club-overlay {
+  background-color: rgba(0, 0, 0, 0.5); /* Dark overlay on image */
+  color: white;
+  padding: 40px;
+  text-align: center;
+  border-radius: 20px;
+  width: 90%;
+  margin: auto;
 }
 
-.social-links span {
-  color: #333;
+.tag i {
+  margin-right: 8px;
+  
+}
+
+.tag i {
+  font-size: 1rem;
+  color: white; 
+}
+
+.tag {
+    text-decoration: none;
+    color: white;
 }

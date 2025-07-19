@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>User Dashboard | ClubHub</title>
+  <link rel="stylesheet" href="/dashboard.css" />
+</head>
+<body>
+
+<nav class="navbar">
+    <div class="logo">ClubHUB</div>
+    <ul class="nav-links">
+      <li><a href="/clubs">Clubs</a></li>
+      <li><a href="/events">Upcoming Events</a></li>
+      <li><a href="/dashboard">Dashboard</a></li>
+    </ul>
+    <div class="profile-icon">
+      <img src="/images/profile-icon.jpg" alt="Profile" />
+    </div>
+</nav>
+
+<div class="dashboard-grid">
+
+  <!-- Your Clubs -->
+  <section class="card cyan-bg">
+    <h3>Your Clubs</h3>
+    <% if (user.yourClubs && user.yourClubs.length > 0) { %>
+      <% user.yourClubs.forEach(club => { %>
+        <div class="card">
+          <h3><%= club.name %></h3>
+          <h4><%= club.role %></h4>
+        </div>
+        <br>
+      <% }) %>
+    <% } else { %>
+      <p>You are not part of any clubs yet.</p>
+    <% } %>
+  </section>
+
+  <!-- Events Calendar -->
+  <section class="card salmon-bg">
+  <h3>Your Events This Month</h3>
+  
+  <% if (!user.registeredEvents || user.registeredEvents.length === 0) { %>
+    <p>You have no upcoming events.</p>
+  <% } else { %>
+    <ul class="event-list">
+      <% user.registeredEvents.forEach(event => { %>
+        <li class="card">
+          <h3><%= event.eventName %></h3>
+          <p><%= event.shortDesc %></p>
+          <p><strong>Club:</strong> <%= event.club %></p>
+          <p><strong>Date:</strong> <%= event.date %></p>
+          <p><strong>Venue:</strong> <%= event.venue %></p>
+
+          <a href="/events/<%= event._id %>" class="btn">View Details</a>
+        </li>
+        <br>
+      <% }); %>
+    </ul>
+  <% } %>
+</section>
+
+
+  <!-- Upcoming Events From Your Clubs -->
+  <section class="card">
+    <h3 class="section-title">Upcoming From Your Clubs</h3>
+    <div class="events-container">
+      <% if (user.yourClubs && user.yourClubs.length > 0) {
+        user.yourClubs.forEach(userClub => {
+          const matchedClub = clubs.find(c => c.name === userClub.name);
+          if (matchedClub && matchedClub.upcomingEvents.length > 0) {
+            matchedClub.upcomingEvents.forEach(eventTitle => {
+              const matchedEvent = events.find(e => e.eventName === eventTitle && e.club === matchedClub.name);
+              if (matchedEvent) { %>
+                <div class="event-card" style="background-image: url('<%= matchedEvent.image %>');">
+                  <h2><%= matchedEvent.eventName %></h2>
+                  <p><%= matchedEvent.shortDesc %></p>
+                  <div class="flex-between">
+                    <span class="btn text-sm"><%= matchedEvent.date %></span>
+                    <span class="text-sm"><%= matchedEvent.club %></span>
+                  </div>
+                  <div class="flex-between">
+                    <a href="/events/<%= matchedEvent.id %>" class="btn btn-turquoise">Know More</a>
+                    <form action="/events/<%= matchedEvent.id %>/register" method="POST">
+                      <button
+                        class="btn btn-salmon"
+                        type="submit"
+                        <% if (registeredEvents.includes(matchedEvent.id)) { %> disabled <% } %>>
+                        <%= registeredEvents.includes(matchedEvent.id) ? "Registered" : "Register" %>
+                      </button>
+                    </form>
+                  </div>
+                  <div style="position: absolute; top: 10px; right: 15px; background: rgba(255,255,255,0.8); color: #222; padding: 2px 10px; border-radius: 1rem; font-weight: 600;">
+                    <%= matchedEvent.registered %>/<%= matchedEvent.capacity %>
+                  </div>
+                </div>
+      <%       } // matchedEvent
+            }) // upcomingEvents
+          } // matchedClub
+        }) // yourClubs
+      } else { %>
+        <p>No upcoming events from your clubs.</p>
+      <% } %>
+    </div>
+  </section>
+
+  <!-- Event History -->
+  <section class="card">
+    <h3>Event History</h3>
+    <% if (user.eventHistory && user.eventHistory.length > 0) { %>
+      <ul class="event-history">
+        <% user.eventHistory.forEach(event => { %>
+          <li class="card salmon-bg">
+            <h3><%= event.name %></h3>
+            <strong><%= event.status %></strong>
+            <p><%= event.club %> | <%= event.date %></p>
+          </li>
+        <% }); %>
+      </ul>
+    <% } else { %>
+      <p>You haven't attended any events yet.</p>
+    <% } %>
+  </section>
+
+<!-- Announcements -->
+<section class="card">
+  <h3>Announcements from Your Clubs</h3>
+  <% if (!userClubsWithAnnouncements || userClubsWithAnnouncements.length === 0) { %>
+    <p>You have no club announcements.</p>
+  <% } else { %>
+    <% userClubsWithAnnouncements.forEach(club => { %>
+      <div class="card cyan-bg" style="margin-bottom: 1rem;">
+        <h4><%= club.name %></h4>
+        <% if (club.announcements.length > 0) { %>
+          <ul>
+            <% club.announcements.forEach(note => { %>
+              <li><%= note %></li>
+            <% }); %>
+          </ul>
+        <% } else { %>
+          <p>No announcements from this club.</p>
+        <% } %>
+      </div>
+    <% }); %>
+  <% } %>
+</section>
+
+
+  <!-- Feedback -->
+  <section class="card">
+    <h3>Your Feedback</h3>
+    <% if (!user.feedback || user.feedback.length === 0) { %>
+      <p>You haven't given feedback yet.</p>
+    <% } else { %>
+      <div class="card cyan-bg">
+        <% user.feedback.forEach(fb => { %>
+          <div>
+            <strong>Rating:</strong> <%= fb.rating %><br>
+            <strong>Comments:</strong> <%= fb.comments %>
+          </div>
+          <hr>
+        <% }); %>
+      </div>
+    <% } %>
+  </section>
+
+  <!-- Clubs Applied -->
+  <section class="card turquoise-bg">
+    <h3>Club Applications</h3>
+    <% if (!user.clubsApplied || user.clubsApplied.length === 0) { %>
+      <p>No club applications submitted yet.</p>
+    <% } else { %>
+      <ul>
+        <% user.clubsApplied.forEach(app => { %>
+          <li><%= app.name %> – <%= app.status.charAt(0).toUpperCase() + app.status.slice(1) %></li>
+        <% }); %>
+      </ul>
+    <% } %>
+  </section>
+
+</div>
+
+</body>
+</html>

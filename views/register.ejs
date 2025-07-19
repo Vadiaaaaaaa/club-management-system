@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Register | ClubHub</title>
+  <link rel="stylesheet" href="/login.css">
+</head>
+<body class="auth-body">
+  <div class="auth-container">
+    <h2>Create Your ClubHub Account</h2>
+    <form action="/register" method="POST" class="auth-form">
+
+      <label for="name">Full Name</label>
+      <input type="text" name="name" placeholder="e.g., Vedika Saboo" required>
+
+      <label for="email">Email</label>
+      <input type="email" name="email" placeholder="you@example.com" required>
+
+      <label for="username">Username</label>
+      <input type="text" name="username" placeholder="vedika_saboo" required>
+
+      <label for="password">Password</label>
+      <input type="password" name="password" placeholder="••••••••" required>
+
+      <label for="role">Role</label>
+      <select name="role" required>
+        <option value="user" selected>User</option>
+        <option value="admin">Admin</option>
+      </select>
+
+      <button type="submit">Register</button>
+    </form>
+
+    <p>Already have an account? <a href="/login">Login here</a></p>
+  </div>
+</body>
+</html>
