@@ -4,23 +4,14 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Join a Club</title>
+  <link rel="stylesheet" href="/navbar.css">
   <link rel="stylesheet" href="/clubs.css" />
+  
   <style>
   </style>
 </head>
 <body>
-
-  <nav class="navbar">
-    <div class="logo">ClubHUB</div>
-    <ul class="nav-links">
-      <li><a href="/clubs">Clubs</a></li>
-      <li><a href="/events">Upcoming Events</a></li>
-      <li><a href="/dashboard">Dashboard</a></li>
-    </ul>
-    <div class="profile-icon">
-      <img src="/images/profile-icon.jpg" alt="Profile" />
-    </div>
-  </nav>
+<%- include("partials/navbar") %>
 
   <h1 class="heading">Join a club!</h1>
 
@@ -39,7 +30,7 @@
         <div class="actions">
           <a href="/clubs/<%= club._id %>" class="know-more-btn">Know More</a>
           <form action="/clubs/<%= club._id %>/apply" method="POST">
-            <% const alreadyApplied = (user?.yourClubs || []).some(c => c.name === club.name); %>
+            <% const alreadyApplied = (user?.clubsApplied || []).some(c => c.name === club.name); %>
 
             <% if (alreadyApplied) { %>
             <button class="join-btn applied" disabled>Applied</button>

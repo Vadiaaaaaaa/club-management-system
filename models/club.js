@@ -23,14 +23,14 @@ const clubSchema = new mongoose.Schema({
     default: 0
   },
 
-  board: [String], // e.g., ["President: Kavya", "Vice-President: Rishi"]
+  board: [String], 
   
-  upcomingEvents: [String], // You can also use ObjectId references if events are stored separately
+  upcomingEvents: [String], 
   pastEvents: [String],
   
-  announcements: [String], // Admin announcements, e.g., ["Meeting on Friday"]
+  announcements: [String],
 
-  tags: [String], // Used for recommendation (e.g., ["AI", "Robotics", "Coding"])
+  tags: [String], 
 
   currentMembers: [
     {

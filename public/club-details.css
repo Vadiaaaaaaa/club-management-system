@@ -1,61 +1,28 @@
+/* Base styles */
 body {
-      font-family: 'Montserrat', sans-serif;
-      margin: 0;
-      background-color: #f3f5ef;
-    }
-
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px 40px;
-  background: white;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  font-family: sans-serif;
+  background-color: #f5f6ef;
+  margin: 0;
+  color: #23272f;
 }
 
-.logo {
-  font-size: 24px;
-  font-weight: bold;
-  color: #000;
-}
-
-.nav-links {
-  list-style: none;
-  display: flex;
-  gap: 30px;
-}
-
-.nav-links li a {
-  text-decoration: none;
-  color: black;
-  font-weight: 500;
-  font-size: 16px;
-}
-
-.nav-links li a:hover {
-  color: #555;
-}
-
-.profile-icon img {
-  width: 35px;
-  height: 35px;
-  border-radius: 50%;
-}
-
-   .club-card {
+/* Club card styles */
+.club-card {
   width: 90%;
   max-width: 1000px;
-  margin: 30px auto;
+  margin: 40px auto;
   background-color: white;
-  border-radius: 25px;
-  overflow: hidden;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  border-radius: 30px;
+  padding: 20px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
 }
 
 .club-bg {
   background-size: cover;
   background-position: center;
-  height: 500px;
+  border-radius: 25px;
+  overflow: hidden;
+  height: 600px;
   position: relative;
   display: flex;
   align-items: center;
@@ -63,12 +30,13 @@ body {
 }
 
 .club-overlay {
-  background-color: rgba(0, 0, 0, 0.55); /* semi-transparent dark overlay */
+  background-color: rgba(0, 0, 0, 0.5);
   color: white;
   padding: 40px;
   text-align: center;
   border-radius: 20px;
-  max-width: 90%;
+  width: 90%;
+  margin: auto;
 }
 
 .club-name {
@@ -109,6 +77,14 @@ body {
   border-radius: 999px;
   font-size: 0.9rem;
   border: 1px solid white;
+  text-decoration: none;
+  color: white;
+}
+
+.tag i {
+  margin-right: 8px;
+  font-size: 1rem;
+  color: white;
 }
 
 .club-section-tags {
@@ -117,7 +93,6 @@ body {
   flex-wrap: wrap;
   gap: 10px;
   margin-top: 20px;
-  
 }
 
 .section-tag {
@@ -154,53 +129,4 @@ body {
 .join-btn:hover {
   background-color: #48b7c5;
   color: white;
-}
-
-
-
-.club-card {
-  width: 90%;
-  max-width: 1000px;
-  margin: 40px auto;
-  background-color: white; /* The white card background */
-  border-radius: 30px;
-  padding: 20px; /* Space around the image */
-  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
-}
-
-.club-bg {
-  background-size: cover;
-  background-position: center;
-  border-radius: 25px;
-  overflow: hidden;
-  height: 600px;
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.club-overlay {
-  background-color: rgba(0, 0, 0, 0.5); /* Dark overlay on image */
-  color: white;
-  padding: 40px;
-  text-align: center;
-  border-radius: 20px;
-  width: 90%;
-  margin: auto;
-}
-
-.tag i {
-  margin-right: 8px;
-  
-}
-
-.tag i {
-  font-size: 1rem;
-  color: white; 
-}
-
-.tag {
-    text-decoration: none;
-    color: white;
 }

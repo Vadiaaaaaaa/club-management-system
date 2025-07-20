@@ -29,17 +29,15 @@ const userSchema = new mongoose.Schema({
     default: "user"
   },
 
-  interests: [String], // From /interests form (e.g., ["AI", "Robotics", "Design"])
+  interests: [String], 
 
-  // Clubs this user is a member of (can be used to show dashboard roles)
   yourClubs: [
     {
       name: String, // Club name
-      role: String  // e.g., "President", "Core Member"
+      role: String  
     }
   ],
 
-  // All clubs this user has applied to
   clubsApplied: [
     {
       name: String,
@@ -87,7 +85,6 @@ const userSchema = new mongoose.Schema({
     }
   ],
 
-  // Optional: For admins managing a club (name and logo for rendering headings)
   club: {
     name: String,
     logo: String,
@@ -107,7 +104,7 @@ const userSchema = new mongoose.Schema({
   }
 });
 
-// 🔐 Hash password before save
+//Hashing Pwd
 userSchema.pre("save", async function (next) {
   if (this.isModified("password")) {
     this.password = await bcrypt.hash(this.password, 12);
@@ -115,7 +112,7 @@ userSchema.pre("save", async function (next) {
   next();
 });
 
-// 🔍 Add method to check password during login
+//Check pwd during login
 userSchema.methods.validatePassword = async function (candidatePassword) {
   return bcrypt.compare(candidatePassword, this.password);
 };

@@ -1,0 +1,87 @@
+/* navbar.css */
+body {
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+  background-color: #f3f5ef;
+  padding-top: 68px; /* So content doesn't hide under navbar */
+  overflow-x: hidden;
+}
+
+/* Navbar */
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 68px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: white;
+  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.06);
+  padding: 0 2.5rem;
+  z-index: 999;
+}
+
+.logo {
+  font-size: 1.6rem;
+  font-weight: bold;
+  color: #000;
+  letter-spacing: 1px;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 2.5rem;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-links li a {
+  text-decoration: none;
+  color: #828ba2;
+  font-weight: 500;
+  font-size: 1rem;
+  letter-spacing: 0.02em;
+  transition: color 0.2s;
+}
+
+.nav-links li a:hover {
+  color: #000;
+}
+
+/* Profile Section */
+.profile-section {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.profile-icon img {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.logout-form {
+  margin: 0;
+}
+
+.logout-link {
+  all: unset;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 1rem;
+  color: #6f6f71;
+  padding: 0.4rem 1rem;
+  border: 2px solid #6f6f71;
+  border-radius: 1.5rem;
+  transition: all 0.2s ease;
+}
+
+.logout-link:hover {
+  background-color: #000;
+  color: #fff;
+}

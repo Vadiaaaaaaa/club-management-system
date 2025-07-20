@@ -4,7 +4,9 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title><%= club.name %></title>
+  <link rel="stylesheet" href="/navbar.css">
   <link rel="stylesheet" href="/club-details.css" />
+  
 
   <head>
     <link
@@ -16,17 +18,8 @@
   </head>
 
   <body>
-    <nav class="navbar">
-    <div class="logo">ClubHUB</div>
-    <ul class="nav-links">
-      <li><a href="/clubs">Clubs</a></li>
-      <li><a href="/events">Upcoming Events</a></li>
-      <li><a href="/dashboard">Dashboard</a></li>
-    </ul>
-    <div class="profile-icon">
-      <img src="/images/profile-icon.jpg" alt="Profile" />
-    </div>
-  </nav>
+     <%- include("partials/navbar") %>
+
  <div class="club-card">
   <div class="club-bg" style="background-image: url('<%= club.image %>');">
     <div class="club-overlay">

@@ -4,21 +4,13 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
+  <link rel="stylesheet" href="/navbar.css">
   <link rel="stylesheet" href="/browse.css">
+  
 </head>
 <body>
 
-  <nav class="navbar">
-    <div class="logo">ClubHUB</div>
-    <ul class="nav-links">
-      <li><a href="/clubs">Clubs</a></li>
-      <li><a href="/events">Upcoming Events</a></li>
-      <li><a href="/dashboard">Dashboard</a></li>
-    </ul>
-    <div class="profile-icon">
-      <img src="/images/profile-icon.jpg" alt="Profile" />
-    </div>
-  </nav>
+<%- include("partials/navbar") %>
 
   <h1 class="heading">Upcoming Events</h1>
 
@@ -43,8 +35,8 @@
               <button
                 class="register-btn"
                 type="submit"
-                <% if (registeredEvents && registeredEvents.includes(event._id)) { %> disabled <% } %>>
-                <%= registeredEvents && registeredEvents.includes(event._id) ? "Registered" : "Register" %>
+                <% if (registeredEvents && registeredEvents.includes(event._id.toString())) { %> disabled <% } %>>
+                <%= registeredEvents && registeredEvents.includes(event._id.toString()) ? "Registered" : "Register" %>
               </button>
             </form>
           </div>

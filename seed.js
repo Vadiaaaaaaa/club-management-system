@@ -14,6 +14,8 @@ const events = [
     shortDesc: "A thrilling AI coding showdown",
     longDesc: "Join us for an intense AI hackathon where you’ll tackle real-world problems using machine learning.",
     date: "2025-07-25",
+    venue: "AB1-204",
+    time: "10:00 AM - 5:00 PM",
     registered: 0,
     capacity: 50,
     image: "/images/ai-event.jpg"
@@ -24,6 +26,8 @@ const events = [
     shortDesc: "Learn ML from scratch",
     longDesc: "A bootcamp for beginners in machine learning.",
     date: "2025-07-28",
+    venue: "TT-105",
+    time: "9:00 AM - 1:00 PM",
     registered: 0,
     capacity: 50,
     image: "/images/ai-event2.jpg"
@@ -34,120 +38,146 @@ const events = [
     shortDesc: "Level up your coding skills",
     longDesc: "Solve algorithmic challenges and win cool prizes!",
     date: "2025-07-24",
+    venue: "SJT Auditorium",
+    time: "1:00 PM - 4:00 PM",
     registered: 0,
     capacity: 50,
     image: "/images/codestorm.jpg"
   },
   {
-  club: "Cybersecurity Club",
-  eventName: "HackTheBox Showdown",
-  shortDesc: "Solve security challenges live",
-  longDesc: "Participate in an exciting CTF-style event hosted with HackTheBox scenarios.",
-  date: "2025-07-26",
-  registered: 0,
-  capacity: 40,
-  image: "/images/hackthebox.jpg"
-},
-{
-  club: "Cybersecurity Club",
-  eventName: "Web Security Workshop",
-  shortDesc: "Learn OWASP Top 10 hands-on",
-  longDesc: "A beginner-friendly workshop on common web vulnerabilities and prevention techniques.",
-  date: "2025-07-29",
-  registered: 0,
-  capacity: 60,
-  image: "/images/websec.jpg"
-},
-{
-  club: "Game Development Club",
-  eventName: "Unity Game Jam",
-  shortDesc: "Make your own game in 48 hours",
-  longDesc: "Join us for an intense weekend game jam using Unity. All levels welcome!",
-  date: "2025-07-30",
-  registered: 0,
-  capacity: 30,
-  image: "/images/unityjam.jpg"
-},
-{
-  club: "Game Development Club",
-  eventName: "Pixel Art Workshop",
-  shortDesc: "Design assets for your games",
-  longDesc: "Learn pixel art fundamentals for game assets using tools like Aseprite.",
-  date: "2025-07-27",
-  registered: 0,
-  capacity: 25,
-  image: "/images/pixelart.jpg"
-},
-{
-  club: "Public Speaking Society",
-  eventName: "Debate Duel",
-  shortDesc: "Face off in a verbal battle",
-  longDesc: "Participants will go head-to-head in live debates judged by expert panels.",
-  date: "2025-07-23",
-  registered: 0,
-  capacity: 50,
-  image: "/images/debateduel.jpg"
-},
-{
-  club: "Public Speaking Society",
-  eventName: "MUN Vellore",
-  shortDesc: "Model United Nations, VIT edition",
-  longDesc: "Represent countries and discuss global issues. Open to all students.",
-  date: "2025-07-31",
-  registered: 0,
-  capacity: 100,
-  image: "/images/munvellore.jpg"
-},
-{
-  club: "Finance & Investment Club",
-  eventName: "Stock Market Simulation",
-  shortDesc: "Real trades. Fake money.",
-  longDesc: "A competitive simulation to learn stock trading in a safe, fun environment.",
-  date: "2025-07-21",
-  registered: 0,
-  capacity: 60,
-  image: "/images/stocksim.jpg"
-},
-{
-  club: "Culinary Club",
-  eventName: "Masterchef VIT",
-  shortDesc: "Cook-off challenge!",
-  longDesc: "Compete in teams and present dishes to our student chef jury.",
-  date: "2025-07-22",
-  registered: 0,
-  capacity: 30,
-  image: "/images/masterchef.jpg"
-},
-{
-  club: "Photography Club",
-  eventName: "PhotoWalk: Campus Colors",
-  shortDesc: "Capture campus in frames",
-  longDesc: "Join us on a guided photo walk across VIT to explore light, texture, and story.",
-  date: "2025-07-26",
-  registered: 0,
-  capacity: 25,
-  image: "/images/photowalk.jpg"
-},
-{
-  club: "Drama Club",
-  eventName: "Street Play Showcase",
-  shortDesc: "Drama with a message",
-  longDesc: "Perform in an open-space act addressing social issues and human emotions.",
-  date: "2025-07-27",
-  registered: 0,
-  capacity: 50,
-  image: "/images/streetplay.jpg"
-},
-{
-  club: "Quiz Club",
-  eventName: "Pop Culture Quiz",
-  shortDesc: "Movies, memes, music & more",
-  longDesc: "Form a team and show off your pop culture knowledge. From Taylor Swift to Star Wars!",
-  date: "2025-07-28",
-  registered: 0,
-  capacity: 70,
-  image: "/images/popquiz.jpg"
-}];
+    club: "Cybersecurity Club",
+    eventName: "HackTheBox Showdown",
+    shortDesc: "Solve security challenges live",
+    longDesc: "Participate in an exciting CTF-style event hosted with HackTheBox scenarios.",
+    date: "2025-07-26",
+    venue: "CBMR Lab",
+    time: "10:30 AM - 3:30 PM",
+    registered: 0,
+    capacity: 40,
+    image: "/images/hackthebox.jpg"
+  },
+  {
+    club: "Cybersecurity Club",
+    eventName: "Web Security Workshop",
+    shortDesc: "Learn OWASP Top 10 hands-on",
+    longDesc: "A beginner-friendly workshop on common web vulnerabilities and prevention techniques.",
+    date: "2025-07-29",
+    venue: "TT-203",
+    time: "2:00 PM - 5:00 PM",
+    registered: 0,
+    capacity: 60,
+    image: "/images/websec.jpg"
+  },
+  {
+    club: "Game Development Club",
+    eventName: "Unity Game Jam",
+    shortDesc: "Make your own game in 48 hours",
+    longDesc: "Join us for an intense weekend game jam using Unity. All levels welcome!",
+    date: "2025-07-30",
+    venue: "Silver Jubilee Tower Lab",
+    time: "9:00 AM - 9:00 PM",
+    registered: 0,
+    capacity: 30,
+    image: "/images/unityjam.jpg"
+  },
+  {
+    club: "Game Development Club",
+    eventName: "Pixel Art Workshop",
+    shortDesc: "Design assets for your games",
+    longDesc: "Learn pixel art fundamentals for game assets using tools like Aseprite.",
+    date: "2025-07-27",
+    venue: "CDMM Studio",
+    time: "11:00 AM - 2:00 PM",
+    registered: 0,
+    capacity: 25,
+    image: "/images/pixelart.jpg"
+  },
+  {
+    club: "Public Speaking Society",
+    eventName: "Debate Duel",
+    shortDesc: "Face off in a verbal battle",
+    longDesc: "Participants will go head-to-head in live debates judged by expert panels.",
+    date: "2025-07-23",
+    venue: "AB1 Smart Classroom",
+    time: "4:00 PM - 6:00 PM",
+    registered: 0,
+    capacity: 50,
+    image: "/images/debateduel.jpg"
+  },
+  {
+    club: "Public Speaking Society",
+    eventName: "MUN Vellore",
+    shortDesc: "Model United Nations, VIT edition",
+    longDesc: "Represent countries and discuss global issues. Open to all students.",
+    date: "2025-07-31",
+    venue: "Main Auditorium",
+    time: "9:00 AM - 6:00 PM",
+    registered: 0,
+    capacity: 100,
+    image: "/images/munvellore.jpg"
+  },
+  {
+    club: "Finance & Investment Club",
+    eventName: "Stock Market Simulation",
+    shortDesc: "Real trades. Fake money.",
+    longDesc: "A competitive simulation to learn stock trading in a safe, fun environment.",
+    date: "2025-07-21",
+    venue: "SMV Hall",
+    time: "2:00 PM - 4:00 PM",
+    registered: 0,
+    capacity: 60,
+    image: "/images/stocksim.jpg"
+  },
+  {
+    club: "Culinary Club",
+    eventName: "Masterchef VIT",
+    shortDesc: "Cook-off challenge!",
+    longDesc: "Compete in teams and present dishes to our student chef jury.",
+    date: "2025-07-22",
+    venue: "Messes (Block 1)",
+    time: "5:00 PM - 7:00 PM",
+    registered: 0,
+    capacity: 30,
+    image: "/images/masterchef.jpg"
+  },
+  {
+    club: "Photography Club",
+    eventName: "PhotoWalk: Campus Colors",
+    shortDesc: "Capture campus in frames",
+    longDesc: "Join us on a guided photo walk across VIT to explore light, texture, and story.",
+    date: "2025-07-26",
+    venue: "Starting Point: Main Gate",
+    time: "7:00 AM - 9:00 AM",
+    registered: 0,
+    capacity: 25,
+    image: "/images/photowalk.jpg"
+  },
+  {
+    club: "Drama Club",
+    eventName: "Street Play Showcase",
+    shortDesc: "Drama with a message",
+    longDesc: "Perform in an open-space act addressing social issues and human emotions.",
+    date: "2025-07-27",
+    venue: "Food Court Lawn",
+    time: "6:00 PM - 8:00 PM",
+    registered: 0,
+    capacity: 50,
+    image: "/images/streetplay.jpg"
+  },
+  {
+    club: "Quiz Club",
+    eventName: "Pop Culture Quiz",
+    shortDesc: "Movies, memes, music & more",
+    longDesc: "Form a team and show off your pop culture knowledge. From Taylor Swift to Star Wars!",
+    date: "2025-07-28",
+    venue: "TT-001",
+    time: "3:00 PM - 5:00 PM",
+    registered: 0,
+    capacity: 70,
+    image: "/images/popquiz.jpg"
+  }
+];
+
 
 // 🤖 CLUBS
 const clubs = [
@@ -362,7 +392,7 @@ const users = [
     password: "test1234",
     role: "user",
     interests: ["AI", "Robotics", "Coding"],
-    yourClubs: [{ name: "Design Club", role: "Core-Member" }],
+    yourClubs: [{ name: "The AI & ML Club", role: "Core-Member" }],
     clubsApplied: [
       { name: "Cybersecurity Club", status: "pending" },
       { name: "Game Development Club", status: "rejected" }

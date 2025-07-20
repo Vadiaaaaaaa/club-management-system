@@ -7,7 +7,9 @@ const eventSchema = new mongoose.Schema({
   eventName: String,
   shortDesc: String,
   longDesc: String,
-  date: String, // or Date
+  date: String,
+  venue: String,
+  time: String,
   registered: { type: Number, default: 0 },
   capacity: Number,
   image: String

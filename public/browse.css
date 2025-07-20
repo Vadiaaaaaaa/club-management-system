@@ -1,49 +1,14 @@
 body {
   margin: 0;
   font-family: 'Montserrat', sans-serif;
-  background: #f3f5ef; /* Light grey background */
+  background: #f3f5ef;
+  color: #23272f;
 }
 
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px 40px;
-  background: white;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-}
 
-.logo {
-  font-size: 24px;
-  font-weight: bold;
-  color: #000;
-}
-
-.nav-links {
-  list-style: none;
-  display: flex;
-  gap: 30px;
-}
-
-.nav-links li a {
-  text-decoration: none;
-  color: black;
-  font-weight: 500;
-  font-size: 16px;
-}
-
-.nav-links li a:hover {
-  color: #555;
-}
-
-.profile-icon img {
-  width: 35px;
-  height: 35px;
-  border-radius: 50%;
-}
-
+/* --- Main Content --- */
 .heading {
-  margin: 20px 40px;
+  margin: 100px 40px 20px; /* adjusted for fixed navbar */
   font-size: 32px;
   font-weight: bold;
 }
@@ -127,14 +92,11 @@ body {
   transition: background-color 0.3s, color 0.3s;
 }
 
-/* Hover effect BEFORE click */
 .register-btn:hover {
   background-color: #f0f0f0;
   color: black;
-  cursor: pointer;
 }
 
-/* AFTER clicking (disabled state) */
 .register-btn:disabled {
   background-color: #d3d3d3;
   color: #555;

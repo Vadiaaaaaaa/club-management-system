@@ -11,7 +11,8 @@ const Event = require("./models/event");
 const User = require("./models/user");
 
 // MongoDB
-const dbURI = 'mongodb+srv://vedikasaboo:watermelon@clubmanagementsystem.lkwytla.mongodb.net/club-management?retryWrites=true&w=majority&appName=clubManagementSystem';
+require('dotenv').config();
+const dbURI = process.env.MONGO_URI;
 
 mongoose.connect(dbURI)
   .then(() => {
@@ -146,9 +147,16 @@ app.get("/clubs/:id", async (req, res) => {
 // Events
 app.get("/events", async (req, res) => {
   const events = await Event.find({});
-  const registeredEvents = req.session.registeredEvents || [];
+  let registeredEvents = [];
+
+  if (req.session.userId) {
+    const user = await User.findById(req.session.userId);
+    registeredEvents = user?.registeredEvents.map(e => e.toString()) || [];
+  }
+
   res.render("events", { events, registeredEvents });
 });
+
 
 app.get("/events/:id", async (req, res) => {
   try {
@@ -167,17 +175,22 @@ app.get("/events/:id", async (req, res) => {
     res.status(500).send("Something went wrong.");
   }
 });
-
 app.post("/events/:id/register", isLoggedIn, async (req, res) => {
   try {
     const event = await Event.findById(req.params.id);
     const user = await User.findById(req.session.userId);
 
-    if (!event || !user) return res.status(404).send("Event or user not found");
+    if (!event || !user) {
+      const message = "Event or user not found";
+      return req.headers.accept.includes("application/json")
+        ? res.status(404).json({ success: false, message })
+        : res.status(404).send(message);
+    }
 
     const alreadyRegistered = user.registeredEvents.some(
       ev => ev.toString() === req.params.id
     );
+
     const hasCapacity = event.registered < event.capacity;
 
     if (!alreadyRegistered && hasCapacity) {
@@ -186,14 +199,25 @@ app.post("/events/:id/register", isLoggedIn, async (req, res) => {
       await event.save();
       await user.save();
       req.session.registeredEvents = user.registeredEvents.map(e => e.toString());
+
+      return req.headers.accept.includes("application/json")
+        ? res.json({ success: true, registered: event.registered })
+        : res.redirect("/events");
     }
 
-    res.redirect("/events");
+    const message = "Already registered or event full";
+    return req.headers.accept.includes("application/json")
+      ? res.json({ success: false, message })
+      : res.redirect("/events");
+
   } catch (err) {
     console.error("Event registration error:", err);
-    res.status(500).send("Something went wrong.");
+    return req.headers.accept.includes("application/json")
+      ? res.status(500).json({ success: false, message: "Internal error" })
+      : res.status(500).send("Something went wrong.");
   }
 });
+
 
 // Dashboard
 app.get("/dashboard", isLoggedIn, async (req, res) => {

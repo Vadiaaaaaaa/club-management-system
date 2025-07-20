@@ -1,153 +1,116 @@
+/* Base */
 body {
-      font-family: 'Montserrat', sans-serif;
-      margin: 0;
-      background-color: #f3f5ef;
-    }
+  font-family: 'Montserrat', sans-serif;
+  margin: 0;
+  background-color: #f3f5ef;
+  color: #23272f;
+}
 
+/* Event Details Modal */
+.event-modal {
+  margin: 100px auto 50px; /* Adjusted for fixed navbar */
+  max-width: 900px;
+  background: white;
+  border-radius: 30px;
+  overflow: hidden;
+  box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
 
-    .event-modal {
-      margin: 50px auto;
-      max-width: 900px;
-      background: white;
-      border-radius: 30px;
-      overflow: hidden;
-      box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
-      position: relative;
-    }
+.event-banner {
+  position: relative;
+  background-image: url("<%= event.image %>");
+  background-size: cover;
+  background-position: center;
+  height: 300px;
+  color: white;
+  display: flex;
+  align-items: flex-start;
+  padding: 30px;
+}
 
-    .event-banner {
-      position: relative;
-      background-image: url("<%= event.image %>");
-      background-size: cover;
-      background-position: center;
-      height: 300px;
-      color: white;
-      display: flex;
-      align-items: flex-start;
-      padding: 30px;
-    }
+.event-banner h1 {
+  margin: 0;
+  font-size: 36px;
+  font-weight: 800;
+}
 
-    .event-banner h1 {
-      margin: 0;
-      font-size: 36px;
-      font-weight: 800;
-    }
+.event-banner .club {
+  font-size: 18px;
+  margin-top: 8px;
+}
 
-    .event-banner .club {
-      font-size: 18px;
-      margin-top: 8px;
-    }
+.capacity-badge {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: white;
+  color: black;
+  border-radius: 30px;
+  padding: 6px 16px;
+  font-weight: bold;
+  font-size: 14px;
+}
 
-    .capacity-badge {
-      position: absolute;
-      top: 20px;
-      right: 20px;
-      background: white;
-      color: black;
-      border-radius: 30px;
-      padding: 6px 16px;
-      font-weight: bold;
-      font-size: 14px;
-    }
+.event-content {
+  padding: 30px;
+  background: rgba(255, 255, 255, 0.95);
+}
 
-    .event-content {
-      padding: 30px;
-      background: rgba(255, 255, 255, 0.95);
-    }
+.event-content p {
+  font-size: 16px;
+  line-height: 1.6;
+}
 
-    .event-content p {
-      font-size: 16px;
-      line-height: 1.6;
-    }
+.event-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-size: 16px;
+  margin-top: 20px;
+}
 
-    .event-meta {
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-      font-size: 16px;
-      margin-top: 20px;
-    }
+.meta-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
 
-    .meta-item {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
+.meta-item i {
+  font-size: 18px;
+}
 
-    .meta-item i {
-      font-size: 18px;
-    }
-
-    .event-footer {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding: 20px 30px;
-    }
-
-    .tag {
-      padding: 8px 18px;
-      border: 2px solid white;
-      border-radius: 20px;
-      font-size: 14px;
-    }
-
-    .register-btn {
-      background: white;
-      color: black;
-      border: none;
-      border-radius: 56px;
-      padding: 10px 20px;
-      font-size: 16px;
-      font-weight: 600;
-      cursor: pointer;
-      transition: 0.3s;
-    }
-
-    .register-btn:hover {
-      background: #f0f0f0;
-    }
-
-    .register-btn:disabled {
-      background: #ccc;
-      cursor: not-allowed;
-    }
-
-
-.navbar {
+.event-footer {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 40px;
+  padding: 20px 30px;
+}
+
+.tag {
+  padding: 8px 18px;
+  border: 2px solid white;
+  border-radius: 20px;
+  font-size: 14px;
+}
+
+.register-btn {
   background: white;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-}
-
-.logo {
-  font-size: 24px;
-  font-weight: bold;
-  color: #000;
-}
-
-.nav-links {
-  list-style: none;
-  display: flex;
-  gap: 30px;
-}
-
-.nav-links li a {
-  text-decoration: none;
   color: black;
-  font-weight: 500;
+  border: none;
+  border-radius: 56px;
+  padding: 10px 20px;
   font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
 }
 
-.nav-links li a:hover {
-  color: #555;
+.register-btn:hover {
+  background: #f0f0f0;
 }
 
-.profile-icon img {
-  width: 35px;
-  height: 35px;
-  border-radius: 50%;
+.register-btn:disabled {
+  background: #ccc;
+  cursor: not-allowed;
 }

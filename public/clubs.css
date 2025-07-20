@@ -1,84 +1,19 @@
+/* Base styles */
 body {
   font-family: sans-serif;
   background-color: #f5f6ef;
   margin: 0;
+  color: #23272f;
 }
 
-
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 20px 40px;
-  background: white;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-}
-
-.logo {
-  font-size: 24px;
-  font-weight: bold;
-  color: #000;
-}
-
-.nav-links {
-  list-style: none;
-  display: flex;
-  gap: 30px;
-}
-
-.nav-links li a {
-  text-decoration: none;
-  color: black;
-  font-weight: 500;
-  font-size: 16px;
-}
-
-.nav-links li a:hover {
-  color: #555;
-}
-
-.profile-icon img {
-  width: 35px;
-  height: 35px;
-  border-radius: 50%;
-}
-
-
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  padding: 1rem 2rem;
-  align-items: center;
-  background-color: white;
-}
-
-.nav-links {
-  list-style: none;
-  display: flex;
-  gap: 1.5rem;
-}
-
-.nav-links a {
-  text-decoration: none;
-  color: black;
-  font-weight: 500;
-}
-
-.logo {
-  font-size: 1.5rem;
-  font-weight: bold;
-}
-
-.profile-icon img {
-  height: 32px;
-}
-
+/* Heading */
 .heading {
   padding-left: 2rem;
   font-size: 2rem;
-  margin-top: 1rem;
+  margin-top: 5rem; /* adjusted for fixed navbar */
 }
 
+/* Club Cards */
 .clubs-container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(45%, 1fr));
@@ -128,7 +63,8 @@ body {
   margin-top: 10px;
 }
 
-.know-more-btn, .join-btn {
+.know-more-btn,
+.join-btn {
   padding: 6px 15px;
   border-radius: 20px;
   font-weight: 500;
